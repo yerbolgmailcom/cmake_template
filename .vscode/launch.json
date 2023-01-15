@@ -44,6 +44,7 @@
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
+            "internalConsoleOptions": "neverOpen",
             "externalConsole": false,
             "MIMode": "gdb",
             "setupCommands": [
