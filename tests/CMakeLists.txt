@@ -16,4 +16,14 @@ target_link_libraries(multiply_test
   GTest::GTest
   multiply)
 
-add_test(multiply_gtests multiply_test)
+find_package(Python COMPONENTS Interpreter REQUIRED)
+
+add_test(NAME gtest_core 
+    COMMAND multiply_test 
+    WORKING_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}"
+)
+
+add_test(NAME test_output_python
+    COMMAND "${Python_EXECUTABLE}" "${CMAKE_CURRENT_LIST_DIR}/test_output.py" 
+    WORKING_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}"
+)
